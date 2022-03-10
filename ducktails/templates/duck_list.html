@@ -1,0 +1,17 @@
+{% extends '_base.html' %} 
+{% load account %}
+{% block content %}
+
+  <div class="container">
+    <h4>Quackintory</h4>
+
+    {% for duck in object_list  %}
+      {% if duck.owner == user %}
+      <li>
+        <a href="{% url 'duck_detail' duck.pk %}">{{ duck.name}}</a>
+      </li>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+{% endblock content %}

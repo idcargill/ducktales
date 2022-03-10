@@ -1,0 +1,23 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block content %}
+  <h1>Duck Details</h1>
+  <div class="card" style="width: 20rem; border-radius: 10px;">
+    <div class="card-body m-3">
+      <h4 class="card-title text-left">{{ object.name }}</h4>
+      <p class="card-subtitle text-muted">Owned by: {{ object.owner }}</p>
+      <p class="card-text">Details</p>
+      <p class="card-text">{{ duck.species }}</p>
+      <a class='btn btn-success' href="{% url 'duck_update' object.pk %}">update</a>
+      <a class='btn btn-success' href="{% url 'duck_list' object.pk %}">delete</a>
+    </div>
+ 
+
+
+
+{% endblock content %}
+
+
+
+
