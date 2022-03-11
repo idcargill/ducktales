@@ -14,5 +14,5 @@ Keep track of your ducks.  Or delete them when you eat them.
 
 Issues with testing due to static assets.
 
-I will not spend any more time debugging a framework.
+I will not spend any more time debugging a framework.\
 I suggest you don't either, don't use DjangoX.
