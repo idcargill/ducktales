@@ -8,7 +8,7 @@
   <form action="" method="POST">
     {% csrf_token %}
     {{ form|crispy }}
-    <input class='btn btn-warning' type="submit" value="Do it">
+    <input class='btn btn-warning' type="SUBMIT" value="Do it">
     <a class='btn btn-primary' href="{% url 'duck_list' %}">Cancel</a>
   </form>
 
