@@ -1,0 +1,25 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block content %}
+  <h1>Duck Details</h1>
+  <div style='margin-left: 25%;'>
+  <div class="card" style="width: 20rem; border-radius: 10px;">
+    <div class="card-body m-3">
+      <h4 class="card-title text-left">{{ object.name }}</h4>
+      <img class="card-img-top m-2" src="{% static 'images/'%}{{ object.get_image_string }}" alt="duck">
+      <p class="card-subtitle text-muted">Owned by: {{ object.owner }}</p>
+      <p class="card-text">{{ object.species }}</p>
+      <p class="card-text">{{ object.notes }}</p>
+      <a class='btn btn-success' href="{% url 'duck_update' object.pk %}">update</a>
+      <a class='btn btn-success' href="{% url 'duck_delete' object.pk %}">delete</a>
+    </div>
+  </div>
+
+
+
+{% endblock content %}
+
+
+
+

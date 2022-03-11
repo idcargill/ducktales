@@ -1,0 +1,31 @@
+{% extends '_base.html' %} 
+{% load account %}
+{% load static %}
+{% block content %}
+
+
+  <div class="container">
+    <h4 class="h3 text-center">Quackintory</h4>
+
+    <div class='list-display-container'>
+    {% for duck in object_list  %}
+      {% if duck.owner == user %}
+          <div class='list-fig'>
+            <figure>
+              <a class="list-name" href="{% url 'duck_detail' duck.pk %}">
+                <img height="120px" width="175px" style="border-radius: 10px;" src="{% static 'images/' %}{{ duck.get_image_string }}">
+                <figcaption>Name: {{ duck.name}}</figcaption>
+              </a>
+            </figure>
+          </div>
+            <div class='list-details'>
+              <p>age: {{ duck.age }}</p>
+              <p>species: {{ duck.species }}</p>
+              <span>notes: {{ duck.notes }}</span>
+            </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+  </div>
+
+{% endblock content %}

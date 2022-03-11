@@ -1,0 +1,10 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load account %}
+
+
+{% block content %}
+  <h1 class="h3 home">Duck Home </h1>
+  <p class='home'>Welcome {% user_display user %} </p>
+
+{% endblock content %}

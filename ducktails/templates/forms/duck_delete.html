@@ -1,0 +1,15 @@
+
+{% extends '_base.html' %} 
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h4>Warning</h4>
+  <p>Are you sure you want to delete {{ duck.name }} : {{ duck.species }}???</p>
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input class='btn btn-warning' type="SUBMIT" value="Do it">
+    <a class='btn btn-primary' href="{% url 'duck_list' %}">Cancel</a>
+  </form>
+
+{% endblock content %}
